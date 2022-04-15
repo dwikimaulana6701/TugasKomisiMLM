@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    function hitung(){
+        var jum1 = document.kirim.jum1.value;
+        var jum2 = document.kirim.jum2.value;
+
+        if(jum1 < 10){
+            hasil_komisi = jum2 * 0.05;
+        }else if(jum1 <= 50){
+            if(jum2 < 1000000){
+                hasil_komisi = jum2 * 0.10;
+            }else{
+                hasil_komisi = jum2 * 0.125;
+            }
+        }else{
+            hasil_komisi = jum2 * 0.15;
+        }
+        document.getElementById("jum_orang").textContent = "Jumlah Orang :" + jum1;
+        document.getElementById("jum_jual").textContent = "Jumlah Penjualan :" + jum2;
+        document.getElementById("hasil_komisi").textContent = "Hasil Komisi:" + hasil_komisi;
+    }
+</script>
+
+<body>
+    <h1>Aplikasi Sederhana Hitung Komisi MLM</h1>
+    <hr>
+    <form action="" name="kirim" method="get">
+        Jumlah Orang: <input type="text" name="jum1" id="">
+        Jumlah Penjualan: <input type="text" name="jum2" id=""><br><br>
+        <input type="button" value="Submit" onclick="hitung()"><br><br>
+        <p id="jum_orang"></p>
+        <p id="jum_jual"></p>
+        <p id="hasil_komisi"></p>
+    </form>
+</body>
+</html>
